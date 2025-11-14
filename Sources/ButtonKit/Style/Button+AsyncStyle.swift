@@ -111,10 +111,12 @@ struct AnyAsyncButtonStyle: AsyncButtonStyle, Sendable {
         self._makeButton = style.makeButtonTypeErased
     }
 
+    @MainActor
     func makeLabel(configuration: LabelConfiguration) -> AnyView {
         self._makeLabel(configuration)
     }
 
+    @MainActor
     func makeButton(configuration: ButtonConfiguration) -> AnyView {
         self._makeButton(configuration)
     }
