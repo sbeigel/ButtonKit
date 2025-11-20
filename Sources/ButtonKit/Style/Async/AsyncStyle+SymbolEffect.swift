@@ -31,6 +31,7 @@ import SwiftUI
 public struct SymbolEffectAsyncButtonStyle<Effect: SymbolEffect&IndefiniteSymbolEffect>: AsyncButtonStyle {
     let effect: Effect
 
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         configuration.label
             .symbolEffect(effect, isActive: configuration.isLoading)

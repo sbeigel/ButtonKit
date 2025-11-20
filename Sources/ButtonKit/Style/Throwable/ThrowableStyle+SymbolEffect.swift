@@ -31,6 +31,7 @@ import SwiftUI
 public struct SymbolEffectThrowableButtonStyle<Effect: SymbolEffect&DiscreteSymbolEffect>: ThrowableButtonStyle {
     let effect: Effect
 
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         configuration.label
             .symbolEffect(effect, value: configuration.numberOfFailures)

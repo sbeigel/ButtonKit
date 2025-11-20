@@ -45,9 +45,11 @@ public protocol AsyncButtonStyle: Sendable {
     @MainActor @ViewBuilder func makeButton(configuration: ButtonConfiguration) -> ButtonView
 }
 extension AsyncButtonStyle {
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         configuration.label
     }
+    @MainActor
     public func makeButton(configuration: ButtonConfiguration) -> some View {
         configuration.button
     }
