@@ -38,6 +38,7 @@ public struct OverlayAsyncButtonStyle: AsyncButtonStyle {
         self.style = style
     }
 
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         configuration.label
             .opacity(configuration.isLoading ? 0 : 1)

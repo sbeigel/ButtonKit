@@ -30,6 +30,7 @@ import SwiftUI
 public struct TrailingAsyncButtonStyle: AsyncButtonStyle {
     public init() {}
 
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         HStack(spacing: 8) {
             configuration.label

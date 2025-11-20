@@ -45,9 +45,11 @@ public protocol ThrowableButtonStyle: Sendable {
     @MainActor @ViewBuilder func makeButton(configuration: ButtonConfiguration) -> ButtonView
 }
 extension ThrowableButtonStyle {
+    @MainActor
     public func makeLabel(configuration: LabelConfiguration) -> some View {
         configuration.label
     }
+    @MainActor
     public func makeButton(configuration: ButtonConfiguration) -> some View {
         configuration.button
     }
@@ -111,10 +113,12 @@ struct AnyThrowableButtonStyle: ThrowableButtonStyle {
         self._makeButton = style.makeButtonTypeErased
     }
 
+    @MainActor
     func makeLabel(configuration: LabelConfiguration) -> AnyView {
         self._makeLabel(configuration)
     }
 
+    @MainActor
     func makeButton(configuration: ButtonConfiguration) -> AnyView {
         self._makeButton(configuration)
     }
